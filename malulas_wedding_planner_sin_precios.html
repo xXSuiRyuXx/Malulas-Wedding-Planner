@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Malula's Wedding Planner: planificaci&oacute;n, decoraci&oacute;n y coordinaci&oacute;n de bodas en Cartagena, Colombia.">
+    <title>Malula's Wedding Planner | Bodas en Cartagena</title>
+    <style>
+        :root {
+            --ink: #42372f;
+            --muted: #796d63;
+            --gold: #ad8758;
+            --cream: #faf7f1;
+            --rose: #eadbd3;
+            --white: #fff
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: var(--ink);
+            background: var(--cream);
+            line-height: 1.65
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fffdf9ee;
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 7%;
+            z-index: 5;
+            border-bottom: 1px solid #eee5da
+        }
+
+        .brand {
+            font-size: 1.15rem;
+            letter-spacing: .08em;
+            color: var(--gold);
+            font-weight: bold
+        }
+
+        nav a {
+            color: var(--ink);
+            text-decoration: none;
+            margin-left: 20px;
+            font: .88rem Arial, sans-serif
+        }
+
+        .hero {
+            min-height: 78vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 90px 20px;
+            background: linear-gradient(#2b21184d, #2b21184d), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85') center/cover;
+            color: white
+        }
+
+        .hero-inner {
+            max-width: 800px
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: .24em;
+            font: .75rem Arial, sans-serif
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5.8rem);
+            line-height: 1.05;
+            margin: 20px 0
+        }
+
+        .hero p {
+            font-size: 1.25rem
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 26px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            font: .8rem Arial, sans-serif;
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+
+        section {
+            padding: 78px 8%;
+            scroll-margin-top: 70px
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 42px
+        }
+
+        .section-head h2 {
+            font-size: 2.4rem;
+            font-weight: normal;
+            margin: 8px 0
+        }
+
+        .section-head p,
+        .muted {
+            color: var(--muted)
+        }
+
+        .eyebrow2 {
+            font: .72rem Arial, sans-serif;
+            color: var(--gold);
+            letter-spacing: .2em;
+            text-transform: uppercase
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center
+        }
+
+        .about img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            line-height: 1.2
+        }
+
+        .services {
+            background: #f0e9df
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px
+        }
+
+        .card {
+            background: white;
+            padding: 0 0 24px
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover
+        }
+
+        .card h3,
+        .card p {
+            margin: 16px 20px
+        }
+
+        .card h3 {
+            font-weight: normal;
+            font-size: 1.35rem
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: .96rem
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover
+        }
+
+        .destination {
+            background: linear-gradient(#2b21184f, #2b21184f), url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2000&q=85') center/cover;
+            color: white;
+            text-align: center
+        }
+
+        .destination .section-head p {
+            color: #fff
+        }
+
+        .contact {
+            background: #f0e9df;
+            text-align: center
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+            background: #fff;
+            padding: 35px
+        }
+
+        .contact-box a {
+            color: var(--gold)
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #453a32;
+            color: #fff;
+            font-size: .9rem
+        }
+
+        /* Paquetes y contacto comercial */
+        .packages {
+            background: #fffdf9
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch
+        }
+
+        .package {
+            background: #fff;
+            border: 1px solid #e8ddd0;
+            box-shadow: 0 8px 28px #42372f0d;
+            display: flex;
+            flex-direction: column
+        }
+
+        .package img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover
+        }
+
+        .package-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1
+        }
+
+        .package-kicker {
+            font: .7rem Arial, sans-serif;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--gold)
+        }
+
+        .package h3 {
+            font-size: 1.55rem;
+            font-weight: normal;
+            margin: 8px 0
+        }
+
+        .package-price {
+            font-size: 1.85rem;
+            color: #9a7045;
+            margin: 8px 0 2px
+        }
+
+        .package-meta {
+            font: .82rem Arial, sans-serif;
+            color: var(--muted);
+            margin-bottom: 15px
+        }
+
+        .package h4 {
+            font: .78rem Arial, sans-serif;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #806344;
+            margin: 18px 0 4px
+        }
+
+        .package ul {
+            padding-left: 19px;
+            color: var(--muted);
+            font-size: .93rem
+        }
+
+        .package li {
+            margin: 7px 0
+        }
+
+        .package-note {
+            font-size: .82rem;
+            color: var(--muted);
+            border-top: 1px solid #eee5da;
+            padding-top: 14px;
+            margin-top: auto
+        }
+
+        .package-tag {
+            display: inline-block;
+            background: #f4eee7;
+            color: #806344;
+            padding: 5px 9px;
+            font: .7rem Arial, sans-serif;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .price-note {
+            max-width: 900px;
+            margin: 30px auto 0;
+            color: var(--muted);
+            font: .86rem Arial, sans-serif;
+            line-height: 1.65;
+            text-align: center
+        }
+
+        .gallery img {
+            border-radius: 2px
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px
+        }
+
+        .contact-item {
+            background: #faf7f1;
+            padding: 15px
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #806344;
+            font: .75rem Arial, sans-serif;
+            letter-spacing: .1em;
+            text-transform: uppercase
+        }
+
+        .contact-box a {
+            overflow-wrap: anywhere
+        }
+
+        .contact-small {
+            font-size: .78rem;
+            color: var(--muted);
+            margin-top: 18px
+        }
+
+        @media(max-width:800px) {
+            .package-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:520px) {
+            .package-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:800px) {
+            nav {
+                display: block;
+                text-align: center
+            }
+
+            nav div:last-child {
+                margin-top: 10px
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: .78rem
+            }
+
+            .about {
+                grid-template-columns: 1fr
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr
+            }
+        }
+
+        @media(max-width:520px) {
+            .cards {
+                grid-template-columns: 1fr
+            }
+
+            .gallery img {
+                height: 190px
+            }
+
+            section {
+                padding: 58px 6%
+            }
+
+            .about img {
+                height: 300px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="brand">MALULA'S WEDDING PLANNER</div>
+        <div>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#paquetes">Paquetes</a>
+            <a href="#galeria">Galer&iacute;a</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="eyebrow">Cartagena · Colombia</div>
+            <h1>Malula's<br>Wedding Planner</h1>
+            <p>Hacemos de tu historia de amor un d&iacute;a inolvidable.</p>
+            <a class="btn" href="#contacto">Comienza a planear</a>
+        </div>
+    </header>
+    <section id="nosotros">
+        <div class="about">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1100&q=85" alt="Decoraci&oacute;n rom&aacute;ntica para una boda">
+            <div>
+                <div class="eyebrow2">Nuestra esencia</div>
+                <h2>Cada historia de amor merece una celebraci&oacute;n especial.</h2>
+                <p>
+                    Malula's Wedding Planner es una empresa dedicada a la organizaci&oacute;n y planificaci&oacute;n de bodas en
+                    Cartagena, Colombia. Nos inspira crear celebraciones que reflejen la personalidad y los sueños de
+                    cada pareja.
+                </p>
+                <p>
+                    Trabajamos con creatividad, compromiso y atenci&oacute;n a los detalles para acompañar cada etapa de la
+                    planificaci&oacute;n.
+                </p>
+                <p>
+                    <strong>Misi&oacute;n:</strong>
+                    Diseñar y organizar bodas &uacute;nicas, con un servicio cercano, creativo y de calidad.
+                </p>
+                <p>
+                    <strong>Visi&oacute;n:</strong>
+                    Ser reconocidos en Cartagena por crear experiencias matrimoniales memorables.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="servicios" class="services">
+        <div class="section-head">
+            <div class="eyebrow2">Lo que hacemos</div>
+            <h2>Nuestros servicios</h2>
+            <p>Un acompañamiento pensado para que disfrutes cada momento de tu celebraci&oacute;n.</p>
+        </div>
+        <div class="cards">
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Ceremonia de boda">
+                <h3>Planificaci&oacute;n integral</h3>
+                <p>Organizaci&oacute;n de cada detalle, desde la elecci&oacute;n del lugar hasta la coordinaci&oacute;n del gran d&iacute;a.</p>
+            </article>
+            <article class="card">
+                <img src="https://luciasecasa.com/wp-content/uploads/2026/07/decoracion-floral-para-bodas-destacada-862x862.jpg" alt="Flores y decoraci&oacute;n">
+                <h3>Decoraci&oacute;n y ambientaci&oacute;n</h3>
+                <p>Diseño de espacios rom&aacute;nticos con flores, iluminaci&oacute;n, mobiliario y detalles especiales.</p>
+            </article>
+            <article class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWGKzSfY6k9t7W6PkShC6raIVYNqBn1riJxwSfHBxuf7jYeVIwRF9r_Z8&s=10" alt="Celebraci&oacute;n elegante">
+                <h3>Bodas en destinos</h3>
+                <p>Celebraciones en escenarios especiales de Cartagena, desde playas hasta espacios hist&oacute;ricos.</p>
+            </article>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80" alt="Mesa de recepci&oacute;n">
+                <h3>Coordinaci&oacute;n del evento</h3>
+                <p>Supervisi&oacute;n del desarrollo de la celebraci&oacute;n para que todo siga lo planeado.</p>
+            </article>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=800&q=80" alt="Detalles de boda">
+                <h3>Asesor&iacute;a personalizada</h3>
+                <p>Orientaci&oacute;n en estilos, proveedores, presupuesto y decisiones importantes.</p>
+            </article>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80" alt="Celebraci&oacute;n de boda">
+                <h3>Momentos especiales</h3>
+                <p>Ideas y detalles que hacen que cada celebraci&oacute;n tenga un sello propio.</p>
+            </article>
+        </div>
+    </section>
+    <section id="paquetes" class="packages">
+        <div class="section-head">
+            <div class="eyebrow2">Celebraciones a tu medida</div>
+            <h2>Nuestros paquetes de boda</h2>
+            <p>
+                Propuestas creadas para honrar distintas tradiciones, cuidar cada detalle y celebrar el amor con una
+                experiencia memorable en Cartagena.
+            </p>
+        </div>
+        <div class="package-grid">
+            <article class="package">
+                <img src="https://cdn0.bodas.com.mx/article-real-wedding/575/3_2/1280/jpg/1416075.jpeg" alt="Ceremonia cat&oacute;lica decorada con flores blancas">
+                <div class="package-body">
+                    <h3>Boda cat&oacute;lica</h3>
+                    <div class="package-meta">Capacidad de referencia · 80 invitados · Cartagena</div>
+                    <p>Una celebraci&oacute;n cl&aacute;sica con ceremonia religiosa, recepci&oacute;n elegante y detalles florales.</p>
+                    <h4>¿Qu&eacute; incluye?</h4>
+                    <ul>
+                        <li>Planeaci&oacute;n y coordinaci&oacute;n integral del evento.</li>
+                        <li>Apoyo log&iacute;stico para ceremonia en iglesia y recepci&oacute;n.</li>
+                        <li>Decoraci&oacute;n floral cl&aacute;sica: altar, pasillo y mesas.</li>
+                        <li>Alquiler de sal&oacute;n o espacio para recepci&oacute;n.</li>
+                        <li>Men&uacute; servido de tres tiempos y bebidas sin alcohol.</li>
+                        <li>Torta de bodas para los invitados.</li>
+                        <li>DJ, sonido e iluminaci&oacute;n b&aacute;sica.</li>
+                        <li>Fotograf&iacute;a profesional durante 6 horas.</li>
+                        <li>Invitaci&oacute;n digital y confirmaci&oacute;n de asistencia.</li>
+                    </ul>
+                    <h4>¿Qu&eacute; no incluye?</h4>
+                    <ul>
+                        <li>Curso prematrimonial y documentos religiosos.</li>
+                        <li>Vestuario de los novios y accesorios personales.</li>
+                        <li>Anillos, licor premium y alojamiento.</li>
+                        <li>Servicios o solicitudes adicionales que no est&eacute;n descritos en el paquete.</li>
+                    </ul>
+                    <p class="package-note">
+                        <strong>Nota:</strong> la pareja debe confirmar con la iglesia los requisitos y elementos espec&iacute;ficos de la ceremonia.
+                    </p>
+                </div>
+            </article>
+            <article class="package">
+                <img src="https://www.remitly.com/blog/wp-content/uploads/2026/06/novios-indios-tradicional-1280x853.png" alt="Decoraci&oacute;n de boda hind&uacute; con colores c&aacute;lidos y flores">
+                <div class="package-body">
+                    <h3>Boda hind&uacute;</h3>
+                    <div class="package-meta">Capacidad de referencia · 100 invitados · Cartagena</div>
+                    <p>Una celebraci&oacute;n vibrante que integra elementos tradicionales y una ambientaci&oacute;n inspirada en la cultura hind&uacute;.</p>
+                    <h4>¿Qu&eacute; incluye?</h4>
+                    <ul>
+                        <li>Planeaci&oacute;n y coordinaci&oacute;n del evento principal.</li>
+                        <li>Coordinaci&oacute;n con pandit o celebrante elegido por la familia.</li>
+                        <li>Mandap decorado con telas, flores y estructura ceremonial.</li>
+                        <li>Entrada tipo baraat con acompañamiento musical b&aacute;sico.</li>
+                        <li>Recepci&oacute;n en espacio privado.</li>
+                        <li>Men&uacute; vegetariano de inspiraci&oacute;n india y bebidas sin alcohol.</li>
+                        <li>DJ, sonido e iluminaci&oacute;n ambiental.</li>
+                        <li>Fotograf&iacute;a profesional durante 8 horas.</li>
+                        <li>Estaci&oacute;n de bienvenida y señalizaci&oacute;n bilingüe b&aacute;sica.</li>
+                    </ul>
+                    <h4>¿Qu&eacute; no incluye?</h4>
+                    <ul>
+                        <li>Ceremonias previas como mehndi, sangeet o haldi.</li>
+                        <li>Artistas o espect&aacute;culos especiales.</li>
+                        <li>Vestuario, joyer&iacute;a y alojamiento.</li>
+                        <li>Servicios religiosos, rituales o catering especializado que no est&eacute;n descritos.</li>
+                        <li>Actividades o d&iacute;as adicionales de celebraci&oacute;n.</li>
+                    </ul>
+                    <p class="package-note">
+                        <strong>Nota:</strong> los rituales y las costumbres se ajustan con la pareja y su familia para respetar sus tradiciones.
+                    </p>
+                </div>
+            </article>
+            <article class="package">
+                <img src="https://cdn0.bodas.com.mx/article-real-wedding/617/3_2/1280/jpg/1331643.jpeg" alt="Recepci&oacute;n de boda elegante con mesas decoradas">
+                <div class="package-body">
+                    <h3>Boda jud&iacute;a</h3>
+                    <div class="package-meta">Capacidad de referencia · 80 invitados · Cartagena</div>
+                    <p>Una recepci&oacute;n sofisticada que contempla los momentos simb&oacute;licos de una ceremonia jud&iacute;a y una fiesta llena de alegr&iacute;a.</p>
+                    <h4>¿Qu&eacute; incluye?</h4>
+                    <ul>
+                        <li>Planeaci&oacute;n y coordinaci&oacute;n integral del evento.</li>
+                        <li>Coordinaci&oacute;n log&iacute;stica con rabino y familia.</li>
+                        <li>Jup&aacute; (chuppah) decorada con flores y telas.</li>
+                        <li>Espacio para ceremonia y recepci&oacute;n.</li>
+                        <li>Men&uacute; de inspiraci&oacute;n mediterr&aacute;nea, sujeto a requisitos alimentarios.</li>
+                        <li>Montaje de mesas, decoraci&oacute;n floral y papeler&iacute;a b&aacute;sica.</li>
+                        <li>DJ y sonido para recepci&oacute;n.</li>
+                        <li>Organizaci&oacute;n de momentos de celebraci&oacute;n como la hora.</li>
+                        <li>Fotograf&iacute;a profesional durante 7 horas.</li>
+                        <li>Torta o mesa dulce.</li>
+                    </ul>
+                    <h4>¿Qu&eacute; no incluye?</h4>
+                    <ul>
+                        <li>Catering kosher certificado ni supervisi&oacute;n kosher especializada.</li>
+                        <li>Honorarios del rabino y tr&aacute;mites o documentos religiosos, incluida la ketub&aacute;.</li>
+                        <li>Vestuario, accesorios y alojamiento.</li>
+                        <li>Transporte especial y servicios adicionales no descritos.</li>
+                    </ul>
+                    <p class="package-note">
+                        <strong>Nota:</strong> los requisitos religiosos y alimentarios deben confirmarse previamente con la familia y los proveedores correspondientes.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="galeria">
+        <div class="section-head">
+            <div class="eyebrow2">Inspiraci&oacute;n</div>
+            <h2>Un vistazo a nuestro universo</h2>
+            <p>Estilos e ideas para imaginar una celebraci&oacute;n inolvidable.</p>
+        </div>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=85" alt="Ramo de flores rosadas">
+            <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=700&q=85" alt="Arreglo floral para boda">
+            <img src="https://i.pinimg.com/originals/14/bf/f7/14bff7e7418e7fecb3c0ff97cc494b35.jpg" alt="Decoraci&oacute;n con flores y follaje">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=85" alt="Centro de mesa floral elegante">
+        </div>
+        <p class="muted" style="text-align:center;font-size:.85rem">
+            Fotograf&iacute;as de referencia para inspirar propuestas florales. Las im&aacute;genes no representan eventos propios de la empresa.
+        </p>
+    </section>
+    <section class="destination">
+        <div class="section-head">
+            <div class="eyebrow">Un destino para enamorarse</div>
+            <h2>Cartagena, escenario de historias inolvidables.</h2>
+            <p>Con su arquitectura hist&oacute;rica, sus playas y el encanto del Caribe, Cartagena ofrece escenarios &uacute;nicos
+                para celebrar el amor. Queremos crear bodas que conecten la belleza del destino con la historia de cada
+                pareja.</p>
+        </div>
+    </section>
+    <section id="contacto" class="contact">
+        <div class="section-head">
+            <div class="eyebrow2">Hablemos de tu d&iacute;a especial</div>
+            <h2>Comencemos a planificar tu historia.</h2>
+            <p>Cu&eacute;ntanos c&oacute;mo imaginas tu celebraci&oacute;n. Estaremos felices de conocer tus ideas.</p>
+        </div>
+        <div class="contact-box">
+            <p><strong>Malula's Wedding Planner</strong></p>
+            <p>Cartagena de Indias, Colombia</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/573054412665">+57 305 4412665</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Correo</strong>
+                    <a href="mailto:lucero.munozpaez@unicolombo.edu.co">lucero.munozpaez@unicolombo.edu.co</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Malula's Wedding Planner · Cartagena, Colombia<br>
+        <span style="opacity:.75">Donde comienza el para siempre.</span>
+    </footer>
+</body>
+</html>
